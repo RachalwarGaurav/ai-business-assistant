@@ -4,8 +4,26 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = MongoClient(os.getenv("MONGO_URI"))
+mongo_uri = os.getenv("MONGO_URI")
 
-db = client["business_ai"]
+if not mongo_uri:
+    print("MONGO_URI missing")
+    mongo_uri = ""
 
-leads_collection = db["leads"]
+try:
+
+    client = MongoClient(mongo_uri)
+
+    db = client["business_ai"]
+
+    leads_collection = db["leads"]
+
+    client.admin.command('ping')
+
+    print("Successfully connected to MongoDB Atlas!")
+
+except Exception as e:
+
+    print("MongoDB Connection Failed")
+
+    print(e)
