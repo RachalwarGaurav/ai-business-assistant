@@ -21,7 +21,7 @@ def chat(data: ChatRequest):
     }
 
     payload = {
-        "model": "mistralai/mistral-7b-instruct:free",
+        "model": "openai/gpt-3.5-turbo",
         "messages": [
             {
                 "role": "user",
@@ -38,16 +38,7 @@ def chat(data: ChatRequest):
 
     result = response.json()
 
-    print(result)
-
-    try:
-
-        ai_response = result["choices"][0]["message"]["content"]
-
-    except:
-
-        ai_response = "AI service temporarily unavailable"
-
     return {
-        "response": ai_response
+        "response":
+        result["choices"][0]["message"]["content"]
     }

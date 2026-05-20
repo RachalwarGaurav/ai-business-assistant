@@ -6,9 +6,9 @@ load_dotenv()
 
 mongo_uri = os.getenv("MONGO_URI")
 
-if not mongo_uri:
-    print("MONGO_URI missing")
-    mongo_uri = ""
+client = None
+db = None
+leads_collection = None
 
 try:
 
@@ -18,12 +18,11 @@ try:
 
     leads_collection = db["leads"]
 
-    client.admin.command('ping')
+    client.admin.command("ping")
 
     print("Successfully connected to MongoDB Atlas!")
 
 except Exception as e:
 
     print("MongoDB Connection Failed")
-
     print(e)
