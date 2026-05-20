@@ -16,7 +16,7 @@ function Dashboard() {
     try {
 
       const res = await axios.get(
-        "http://127.0.0.1:8000/leads"
+        "https://ai-business-assistant-56ms.onrender.com/leads"
       )
 
       setLeads(res.data)

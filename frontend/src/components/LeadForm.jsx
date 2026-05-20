@@ -15,7 +15,7 @@ function LeadForm() {
     try {
 
       await axios.post(
-        "http://127.0.0.1:8000/lead",
+        "https://ai-business-assistant-56ms.onrender.com/lead",
         formData
       )
 
