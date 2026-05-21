@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import API_URL from "../config"
 
 function LeadForm() {
 
@@ -15,7 +16,7 @@ function LeadForm() {
     try {
 
       await axios.post(
-        "https://ai-business-assistant-56ms.onrender.com/lead",
+        `${API_URL}/lead`,
         formData
       )
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
+import API_URL from "../config"
 
 function Dashboard() {
 
@@ -16,7 +17,7 @@ function Dashboard() {
     try {
 
       const res = await axios.get(
-        "https://ai-business-assistant-56ms.onrender.com/leads"
+        `${API_URL}/leads`
       )
 
       setLeads(res.data)

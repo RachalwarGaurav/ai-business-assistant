@@ -1,5 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
+import API_URL from "../config"
 
 function Chatbot() {
 
@@ -19,7 +20,7 @@ function Chatbot() {
       setLoading(true)
 
       const res = await axios.post(
-        "https://ai-business-assistant-56ms.onrender.com/chat",
+        `${API_URL}/chat`,
         {
           message
         }
