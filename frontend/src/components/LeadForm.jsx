@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
-import API_URL from "../config"
+import SERVER_URL from "../config"
 
 function LeadForm() {
 
@@ -16,7 +16,7 @@ function LeadForm() {
     try {
 
       await axios.post(
-        `${API_URL}/lead`,
+        `${SERVER_URL}/lead`,
         formData
       )
 

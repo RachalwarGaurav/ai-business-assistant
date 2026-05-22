@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
-import API_URL from "../config"
+import SERVER_URL from "../config"
 
 function UserLogin({ onLoginSuccess }) {
   const [tab, setTab] = useState("login") // "login", "signup", "admin"
@@ -34,7 +34,7 @@ function UserLogin({ onLoginSuccess }) {
           return
         }
 
-        const res = await axios.post(`${API_URL}/auth/signup`, {
+        const res = await axios.post(`${SERVER_URL}/auth/signup`, {
           username: formData.username,
           email: formData.email,
           password: formData.password
@@ -49,7 +49,7 @@ function UserLogin({ onLoginSuccess }) {
           setError(res.data.message)
         }
       } else {
-        const res = await axios.post(`${API_URL}/auth/user-login`, {
+        const res = await axios.post(`${SERVER_URL}/auth/user-login`, {
           username: formData.username,
           password: formData.password
         })
@@ -76,7 +76,7 @@ function UserLogin({ onLoginSuccess }) {
     setLoading(true)
 
     try {
-      const res = await axios.post(`${API_URL}/auth/admin-login`, {
+      const res = await axios.post(`${SERVER_URL}/auth/admin-login`, {
         username: formData.username,
         password: formData.password
       })

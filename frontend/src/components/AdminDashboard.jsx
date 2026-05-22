@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import API_URL from "../config"
+import SERVER_URL from "../config"
 
 function AdminDashboard() {
   const [leads, setLeads] = useState([])
@@ -12,7 +12,7 @@ function AdminDashboard() {
   const fetchLeads = async () => {
     try {
       const res = await axios.get(
-        `${API_URL}/leads`
+        `${SERVER_URL}/leads`
       )
       setLeads(res.data)
     } catch (error) {

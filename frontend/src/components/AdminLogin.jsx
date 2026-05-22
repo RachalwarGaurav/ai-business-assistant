@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from "axios"
-import API_URL from "../config"
+import SERVER_URL from "../config"
 
 function AdminLogin({ onLoginSuccess }) {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ function AdminLogin({ onLoginSuccess }) {
     setLoading(true)
 
     try {
-      const res = await axios.post(`${API_URL}/auth/admin-login`, {
+      const res = await axios.post(`${SERVER_URL}/auth/admin-login`, {
         username: formData.username,
         password: formData.password
       })

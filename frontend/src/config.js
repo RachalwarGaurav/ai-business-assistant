@@ -1,4 +1,4 @@
 // API Configuration
-const API_URL = import.meta.env.VITE_API_URL || 'https://ai-business-assistant-56ms.onrender.com'
+const SERVER_URL = import.meta.env.VITE_SERVER_URL || 'https://ai-business-assistant-56ms.onrender.com'
 
-export default API_URL
+export default SERVER_URL

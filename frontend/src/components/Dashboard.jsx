@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-import API_URL from "../config"
+import SERVER_URL from "../config"
 
 function Dashboard() {
 
@@ -17,7 +17,7 @@ function Dashboard() {
     try {
 
       const res = await axios.get(
-        `${API_URL}/leads`
+        `${SERVER_URL}/leads`
       )
 
       setLeads(res.data)
